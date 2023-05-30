@@ -68,31 +68,12 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Add Post & List:</h6>
-                    <a class="collapse-item" href="/add_post">Add Post</a>
-                    <a class="collapse-item" href="/list_of_post">List Of Post</a>
+                    <h6 class="collapse-header">Добавить вопрос & Лист:</h6>
+                    <a class="collapse-item" href="/add_post">Добавить вопрос</a>
+                    <a class="collapse-item" href="/list_of_post">Лист вопросов</a>
                 </div>
             </div>
         </li>
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Category</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Category:</h6>
-                    <a class="collapse-item" href="/add_category">Add Category</a>
-                    <a class="collapse-item" href="/list_of_category">List Of Category</a>
-
-                </div>
-            </div>
-        </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -107,15 +88,15 @@
                aria-expanded="true"
                aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>About & Contact Us</span>
+                <span>О нас & Свяжитесь</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">About</h6>
-                    <a class="collapse-item" href="/About">About</a>
+                    <h6 class="collapse-header">О нас</h6>
+                    <a class="collapse-item" href="/About">О нас</a>
                     <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Contact Us:</h6>
-                    <a class="collapse-item" href="/contact_us">Contact Us</a>
+                    <h6 class="collapse-header">Контакты:</h6>
+                    <a class="collapse-item" href="/contact_us">Свяжитесь с нами</a>
                 </div>
             </div>
         </li>
@@ -192,13 +173,13 @@
                              aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="/profile">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                                Профиль
                             </a>
 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+                                Выйти
                             </a>
                         </div>
                     </li>
@@ -206,47 +187,72 @@
                 </ul>
 
             </nav>
-            <!-- End of Topbar -->
-            <!-- main content  -->
-            <!-- Begin Page Content -->
+
             <div class="container-fluid">
                 <div class="col-xl-10 col-lg-10">
                     <div class="add-post-card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Add question</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Добавить вопрос</h6>
                         </div>
                         <!-- Card Body -->
                         <div class="">
                             <div class="chart-area px-3">
 
-                                <form class="user" action="" method="POST" enctype="multipart/form-data">
+                                <form class="user" th:action="@{add_post}" method="POST" th:object="${questionDto}"
+                                      enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 mb-sm-0">
-                                            <label for="question">Question</label>
-                                            <input type="text" autocomplete="off" class="form-control form-control-user"
+                                            <label for="question">Вопрос</label>
+                                            <input width="100%" type="text" autocomplete="off"
+                                                   class="form-control form-control-user"
                                                    id="question"
-                                                   name="question" placeholder="Question" required>
+                                                   th:field="${questionDto.title}" placeholder="Question" required>
+                                        </div>
+                                    </div>
+
+                                    <!--1 javob -->
+                                    <div class="form-group row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 mb-sm-0">
+                                            <label for="optionA">Ответ А</label>
+                                            <input type="text" autocomplete="off" class="form-control form-control-user"
+                                                   id="optionA"
+                                                   th:field="${questionDto.optionA}" placeholder="optionA" required>
                                         </div>
 
+                                        <!--2 javob-->
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                                            <label for="category">Category of question</label>
-                                            <select name="post_category" id="category"
+                                            <label for="optionB">Ответ Б</label>
+                                            <input type="text" class="form-control form-control-user d-flex flex-row"
+                                                   id="optionB"
+                                                   th:field="${questionDto.optionB}" placeholder="optionB" required>
+                                        </div>
+                                    </div>
+
+                                    <!--3 javob -->
+                                    <div class="form-group row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 mb-sm-0">
+                                            <label for="optionC">Ответ С</label>
+                                            <input type="text" autocomplete="off" class="form-control form-control-user"
+                                                   id="optionC"
+                                                   th:field="${questionDto.optionC}" placeholder="optionC" required>
+                                        </div>
+
+                                        <!--4 javob-->
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                                            <label for="answerId">Правильный ответ</label>
+                                            <select name="ans" id="answerId"
                                                     class="form-control-user form-select  form-control"
                                                     required>
-                                                <option value="Category name" class="form-control">Category name
+                                                <option value=1 class="form-control">A
                                                 </option>
-                                                <option value="Category name" class="form-control">Category name
+                                                <option value=2 class="form-control">B
                                                 </option>
-                                                <option value="Category name" class="form-control">Category name
-                                                </option>
-                                                <option value="Category name" class="form-control">Category name
-                                                </option>
-                                                <option value="Category name" class="form-control">Category name
+                                                <option value=3 class="form-control">C
                                                 </option>
                                             </select>
                                             <!-- <input type="text" class="form-control form-control-user" id="search"  name="post_category" placeholder="Post Category" autocomplete="off">  -->
-                                            <input type='hidden' id='category_id' name="category_id">
+                                            <input type='hidden' id='ans' th:field="${questionDto.ans}">
                                             <div style="display: inline-flex; position: absolute;z-index: 999;background: whitesmoke; width: 200px;
                       " id="display" class="form-group">
                                             </div>
@@ -254,64 +260,18 @@
 
                                     </div>
 
-                                    <!--1 javob -->
-                                    <div class="form-group row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 mb-sm-0">
-                                            <label for="wrong_answer1">Worng Answer 1</label>
-                                            <input type="text" autocomplete="off" class="form-control form-control-user"
-                                                   id="wrong_answer1"
-                                                   name="wrongAnswer1" placeholder="Wrong answer" required>
-                                        </div>
-
-                                        <!--2 javob-->
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                                            <label for="wrong_answer2">Wrong Answer 2</label>
-                                            <input type="text" class="form-control form-control-user d-flex flex-row"
-                                                   id="wrong_answer2"
-                                                   name="wrongAnswer2" placeholder="Wrong answer" required>
-                                        </div>
-                                    </div>
-
-                                    <!--3 javob -->
-                                    <div class="form-group row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 mb-sm-0">
-                                            <label for="wrong_answer3">Wrong Answer 3</label>
-                                            <input type="text" autocomplete="off" class="form-control form-control-user"
-                                                   id="wrong_answer3"
-                                                   name="wrongAnswer3" placeholder="Wrong answer" required>
-                                        </div>
-
-                                        <!--4 javob-->
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-                                            <label for="answer">Answer</label>
-                                            <input type="text" class="form-control form-control-user d-flex flex-row"
-                                                   id="answer"
-                                                   name="answer" placeholder="Answer" required>
-                                        </div>
-                                    </div>
-
                                     <div class="form-group row">
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-3 mb-3">
-                                            <label for="picture">Picture of Question</label>
+                                            <label for="picture">Картинка вопроса</label>
                                             <input type="file" autocomplete="off" class="form-control form-control-user"
                                                    id="picture"
-                                                   name="car-img" required>
-                                        </div>
-
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-8 col-xxl-9">
-                                            <label for="description">Description</label>
-                                            <textarea type="text" autocomplete="off" class="form-control"
-                                                      id="description"
-                                                      name="description" placeholder="Description..."
-                                                      required></textarea>
+                                                   th:field="${questionDto.file}">
                                         </div>
                                     </div>
 
 
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">Submit</button>
-
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Сохранить</button>
                                     <hr>
-
                                 </form>
                             </div>
                         </div>

@@ -34,7 +34,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/profile">
             <div class="sidebar-brand-icon">
-                <img width="40px;" height="40px;" class="img-profile rounded-circle" src="img/admin.png" alt="profile-img">
+                <img width="40px;" height="40px;" class="img-profile rounded-circle" src="img/admin.png">
             </div>
             <div class="sidebar-brand-text mx-3">My Admin <sup>1.0</sup></div>
         </a>
@@ -43,7 +43,7 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/admin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
@@ -58,7 +58,7 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                aria-expanded="true"
                aria-controls="collapseTwo">
@@ -67,31 +67,12 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Add Post & List:</h6>
-                    <a class="collapse-item" href="/add_post">Add Post</a>
-                    <a class="collapse-item" href="/list_of_post">List Of Post</a>
+                    <h6 class="collapse-header">Добавить вопрос & Лист:</h6>
+                    <a class="collapse-item" href="/add_post">Добавить вопрос</a>
+                    <a class="collapse-item" href="/list_of_post">Лист вопросов</a>
                 </div>
             </div>
         </li>
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Category</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Category:</h6>
-                    <a class="collapse-item" href="/add_category">Add Category</a>
-                    <a class="collapse-item" href="/list_of_category">List Of Category</a>
-
-                </div>
-            </div>
-        </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -106,15 +87,15 @@
                aria-expanded="true"
                aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>About & Contact Us</span>
+                <span>О нас & Свяжитесь</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">About</h6>
-                    <a class="collapse-item" href="/About">About</a>
+                    <h6 class="collapse-header">О нас</h6>
+                    <a class="collapse-item" href="/About">О нас</a>
                     <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Contact Us:</h6>
-                    <a class="collapse-item" href="/contact_us">Contact Us</a>
+                    <h6 class="collapse-header">Контакты:</h6>
+                    <a class="collapse-item" href="/contact_us">Свяжитесь с нами</a>
                 </div>
             </div>
         </li>
@@ -174,7 +155,7 @@
                     </li>
 
 
-                    <div class="top-bar-divider d-none d-sm-block"></div>
+                    <div class="topbar-divider d-none d-sm-block"></div>
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
@@ -184,19 +165,20 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
                 </span>
-                            <img class="img-profile rounded-circle" th:src="@{../../static/img/admin.png}">
+                            <img class="img-profile rounded-circle" src="img/admin.png">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="/profile">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                                Профиль
                             </a>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+                                Выйти
                             </a>
                         </div>
                     </li>

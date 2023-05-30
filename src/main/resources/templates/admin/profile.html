@@ -37,7 +37,7 @@
         <div class="sidebar-brand-icon">
           <img width="40px;" height="40px;" class="img-profile rounded-circle" src="img/admin.png">
         </div>
-        <div class="sidebar-brand-text mx-3 active">My Admin <sup>1.0</sup></div>
+        <div class="sidebar-brand-text mx-3">My Admin <sup>1.0</sup></div>
       </a>
 
       <!-- Divider -->
@@ -59,38 +59,21 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-          aria-controls="collapseTwo">
+      <li class="nav-item active">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+           aria-expanded="true"
+           aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Post</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Add Post & List:</h6>
-            <a class="collapse-item" href="/add_post">Add Post</a>
-            <a class="collapse-item" href="/list_of_post">List Of Post</a>
+            <h6 class="collapse-header">Добавить вопрос & Лист:</h6>
+            <a class="collapse-item" href="/add_post">Добавить вопрос</a>
+            <a class="collapse-item" href="/list_of_post">Лист вопросов</a>
           </div>
         </div>
       </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-          aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Category</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Category:</h6>
-            <a class="collapse-item" href="/add_category">Add Category</a>
-            <a class="collapse-item" href="/list_of_category">List Of Category</a>
-
-          </div>
-        </div>
-      </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -101,22 +84,22 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-          aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+           aria-expanded="true"
+           aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>About & Contact Us</span>
+          <span>О нас & Свяжитесь</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">About</h6>
-            <a class="collapse-item" href="/About">About</a>
+            <h6 class="collapse-header">О нас</h6>
+            <a class="collapse-item" href="/About">О нас</a>
             <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Contact Us:</h6>
-            <a class="collapse-item" href="/contact_us">Contact Us</a>
+            <h6 class="collapse-header">Контакты:</h6>
+            <a class="collapse-item" href="/contact_us">Свяжитесь с нами</a>
           </div>
         </div>
       </li>
-
 
 
       <!-- Divider -->
@@ -149,17 +132,19 @@
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                 data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                aria-labelledby="searchDropdown">
+                   aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                      aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control bg-light border-0 small"
+                           placeholder="Search for..."
+                           aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -171,29 +156,30 @@
             </li>
 
 
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                 data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
                 </span>
                 <img class="img-profile rounded-circle" src="img/admin.png">
               </a>
               <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                   aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="/profile">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Профиль
                 </a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Выйти
                 </a>
               </div>
             </li>
@@ -208,17 +194,6 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-
-            <!-- <form class="form-inline" method="post" action="">
-              <button type="submit" id="pdf" name="generate_pdf" class="btn btn-primary"><i class="fa fa-pdf" aria-hidden="true"></i>
-                Generate PDF</button>
-            </form>
-
-            <form class="form-inline" method="post" action="">
-              <button type="submit" id="excel" name="" class="btn btn-primary"><i class="fa fa-pdf" aria-hidden="true"></i>
-                Generate Excel</button>
-            </form> -->
-
           </div>
 
           <!-- Content Row -->
@@ -241,27 +216,6 @@
                 </div>
               </a>
             </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <a href="/list_of_category">
-                <div class="card border-left-success shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">No Of Categories</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">Kategoriyalar sonini sanash</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-sitemap  fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-
 
           </div>
 
@@ -287,7 +241,7 @@
                         <h4 class="small font-weight-bold"><b>Admin Email:</b></h4>
                       </th>
                       <th>
-                        <h4 class="small font-weight-bold">jumaqulovravshan@gmail.com</h4>
+                        <h4 class="small font-weight-bold">nomonzonrh@gmail.com</h4>
                       </th>
                     </tr>
                     <tr>
@@ -295,7 +249,7 @@
                         <h4 class="small font-weight-bold"><b>Admin Phone No.:</b></h4>
                       </th>
                       <th>
-                        <h4 class="small font-weight-bold">+998 99 756 56 84</h4>
+                        <h4 class="small font-weight-bold">+998 99 311 60 96</h4>
                       </th>
                     </tr>
                     <tr>
