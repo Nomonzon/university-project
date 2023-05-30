@@ -18,7 +18,13 @@ public class Result {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    // имя пользователя
     private String username;
+
+    // электронная почта пользователя
+    private String email;
+
+    // Количество правильных ответов
     private int totalCorrect = 0;
 
 }

@@ -36,6 +36,10 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/sign")
+    public String sign() {
+        return "sign";
+    }
 
     @PostMapping("/quiz")
     public String quiz(@RequestParam String username, Model model, RedirectAttributes redirectAttributes) {

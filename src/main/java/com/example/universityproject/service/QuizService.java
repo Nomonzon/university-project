@@ -28,6 +28,9 @@ public class QuizService {
     @Autowired
     ResultRepo rRepo;
 
+    /*
+    getQuestions() - получает список всех вопросов из репозитория QuestionRepo с помощью метода findAll(). Затем случайным образом выбирает 10 вопросов из общего списка и сохраняет их в объекте QuestionForm, который затем возвращается в контроллер.
+     */
     public QuestionForm getQuestions() {
         List<Question> allQues = qRepo.findAll();
         List<Question> qList = new ArrayList<>();
@@ -42,6 +45,9 @@ public class QuizService {
         return qForm;
     }
 
+    /*
+    getResult() - вычисляет общее количество правильных ответов на основе переданной QuestionForm. Проходит по каждому вопросу в QuestionForm, сравнивает выбранный ответ (getChose()) с правильным ответом (getAns()) и увеличивает счетчик correct, если ответы совпадают. Возвращает общее количество правильных ответов.
+     */
     public int getResult(QuestionForm qForm) {
         int correct = 0;
         for (Question q : qForm.getQuestions()) {
@@ -53,6 +59,9 @@ public class QuizService {
         return correct;
     }
 
+    /*
+    saveScore() - сохраняет результаты тестирования в репозитории ResultRepo. Создает новый объект Result на основе переданного результата и сохраняет его в базе данных.
+     */
     public void saveScore(Result result) {
         Result saveResult = new Result();
         saveResult.setUsername(result.getUsername());
@@ -60,6 +69,9 @@ public class QuizService {
         rRepo.save(saveResult);
     }
 
+    /*
+    getTopScore() - получает список лучших результатов из репозитория ResultRepo с помощью метода findAll() и сортирует их в порядке убывания количества правильных ответов с помощью Sort.by(). Возвращает отсортированный список результатов.
+     */
     public List<Result> getTopScore() {
         return rRepo.findAll(Sort.by(Sort.Direction.DESC, "totalCorrect"));
     }
